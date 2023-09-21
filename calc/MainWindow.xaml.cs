@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static calc.MainWindow;
 
 namespace calc
 {
@@ -20,8 +21,9 @@ namespace calc
     /// </summary>
     public partial class MainWindow : Window
     {
-        double lastresult;
+        double lastNumber;
         double result;
+        SelectedOperator selectedOperator;
 
         public MainWindow()
         {
@@ -30,15 +32,6 @@ namespace calc
             CalcTextBox.Text = "0";
 
         }
-
-        public enum SelectedOperator
-        {
-            Addition,
-            Subtraction,
-            Multiplication,
-            Division
-        }
-
         public class SimpleMath
         {
             public static double Add(double n1, double n2)
@@ -59,6 +52,15 @@ namespace calc
             }
 
         }
+
+        public enum SelectedOperator
+        {
+            Addition,
+            Subtraction,
+            Multiplication,
+            Division
+        }
+
         private void ButtonCreate()
         {
             /* Number Button Create Method */
@@ -76,29 +78,58 @@ namespace calc
 
 
             /* Four basic operations Button Create Method */
-            PlusButton.Click += PlusButton_Click;
-            MinusButton.Click += MinusButton_Click;
-            DivisButton.Click += DivisButton_Click;
+            PlusButton.Click += OperationButton_Click;
+            MinusButton.Click += OperationButton_Click;
+            MultipleButton.Click += OperationButton_Click;
+            DivisButton.Click += OperationButton_Click;
 
             /* Etc Button Create Method */
-            PlusMinusButton.Click += PlusMinusButton_Click;
-            DotButton.Click += DotButton_Click;
-            ResultButton.Click += ResultButton_Click;
-            ClearButton.Click += ClearButton_Click;
-            ClearEntryButton.Click += ClearEntryButton_Click;
+            PlusMinusButton.Click += EtcButton_Click;
+            DotButton.Click += EtcButton_Click;
+            ResultButton.Click += EtcButton_Click;
+            ClearButton.Click += EtcButton_Click;
+            ClearEntryButton.Click += EtcButton_Click;
 
         }
 
-        private void ClearEntryButton_Click(object sender, RoutedEventArgs e)
+        private void EtcButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            if(sender == ClearButton)
+            {
+                CalcTextBox.Text = "0";
+            }
 
-        private void ClearButton_Click(object sender, RoutedEventArgs e)
-        {
-            CalcTextBox.Text = "0";
-        }
+            if(sender == ResultButton)
+            {
+                double newNumber;
+                newNumber = double.Parse(CalcTextBox.Text);
 
+                switch (selectedOperator)
+                {
+                    case SelectedOperator.Addition:
+                        result = SimpleMath.Add(lastNumber, newNumber);
+                        break;
+                    case SelectedOperator.Subtraction:
+                        result = SimpleMath.Add(lastNumber, newNumber);
+                        break;
+                    case SelectedOperator.Multiplication:
+                        result = SimpleMath.Add(lastNumber, newNumber);
+                        break;
+                    case SelectedOperator.Division:
+                        result = SimpleMath.Add(lastNumber, newNumber);
+                        break;
+                }
+
+                CalcTextBox.Text = result.ToString();
+
+
+                }
+        }
+        /// <summary>
+        /// 숫자 버튼을 입력했을 때 출력 되는 발생하는 함수
+        /// </summary>
+        /// <param name="sender">숫자 버튼 이름</param>
+        /// <param name="e"></param>
         private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
             // 1. 어떤 버튼을 눌러는지 파악
@@ -107,169 +138,127 @@ namespace calc
             //      "1" -> 2를 누름 -> "12"
             //
             // 2. UI에 표시됨
-            double input = 0;
+            double inputNum = 0;
             if (CalcTextBox.Text == "0")
             {
                 if (sender == NineButton)
                 {
-                    input = 9;
+                    inputNum = 9;
                 }
                 if (sender == EightButton)
                 {
-                    input = 8;
+                    inputNum = 8;
                 }
                 if (sender == SevenButton)
                 {
-                    input = 7;
+                    inputNum = 7;
                 }
                 if (sender == SixButton)
                 {
-                    input = 6;
+                    inputNum = 6;
                 }
                 if (sender == FiveButton)
                 {
-                    input = 5;
+                    inputNum = 5;
                 }
                 if (sender == FourButton)
                 {
-                    input = 4;
+                    inputNum = 4;
                 }
                 if (sender == ThreeButton)
                 {
-                    input = 3;
+                    inputNum = 3;
                 }
                 if (sender == TwoButton)
                 {
-                    input = 2;
+                    inputNum = 2;
                 }
                 if (sender == OneButton)
                 {
-                    input = 1;
+                    inputNum = 1;
                 }
                 if (sender == ZeroButton)
                 {
-                    input = 0;
+                    inputNum = 0;
                 }
-                CalcTextBox.Text = input.ToString();
+                CalcTextBox.Text = inputNum.ToString();
             }
             else
             {
                 if (sender == NineButton)
                 {
-                    input = 9;
+                    inputNum = 9;
                 }
                 if (sender == EightButton)
                 {
-                    input = 8;
+                    inputNum = 8;
                 }
                 if (sender == SevenButton)
                 {
-                    input = 7;
+                    inputNum = 7;
                 }
                 if (sender == SixButton)
                 {
-                    input = 6;
+                    inputNum = 6;
                 }
                 if (sender == FiveButton)
                 {
-                    input = 5;
+                    inputNum = 5;
                 }
                 if (sender == FourButton)
                 {
-                    input = 4;
+                    inputNum = 4;
                 }
                 if (sender == ThreeButton)
                 {
-                    input = 3;
+                    inputNum = 3;
                 }
                 if (sender == TwoButton)
                 {
-                    input = 2;
+                    inputNum = 2;
                 }
                 if (sender == OneButton)
                 {
-                    input = 1;
+                    inputNum = 1;
                 }
                 if (sender == ZeroButton)
                 {
-                    input = 0;
+                    inputNum = 0;
                 }
-                CalcTextBox.Text += input.ToString();
+                CalcTextBox.Text += inputNum.ToString();
             }
-
-             
-            
-        }
-
-        /* Calculator Method*/
+            lastNumber = double.Parse(CalcTextBox.Text);
 
 
-
-        /* Number Button Methods*/
-        private void OneButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void TwoButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void ThreeButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void FourButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void FiveButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void SixButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void SevenButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void EightButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void NineButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 연산 기호 버튼을 눌렀을 때 연산해주는 함수
+        /// </summary>
+        /// <param name="sender">연산 기호 버튼 이름</param>
+        /// <param name="e"></param>
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(sender == PlusButton)
+            {
+                selectedOperator = SelectedOperator.Addition;
+            }
+            if (sender == MinusButton)
+            {
+                selectedOperator = SelectedOperator.Subtraction;
+            }
+            if (sender == DivisButton)
+            {
+                selectedOperator = SelectedOperator.Division;
+            }
+            if (sender == MultipleButton)
+            {
+                selectedOperator = SelectedOperator.Multiplication;
+            }
+        }
 
+        
 
-        /* Etc Button Methods */
-        private void DivisButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void MinusButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void ResultButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void DotButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void PlusMinusButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void PlusButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
         
     }
 }

@@ -16,7 +16,7 @@
             <Button x:Name="FractionButton" FontSize="20" Content="1/x" Foreground="White" Background="Gray" />
             <Button x:Name="SqrButton" FontSize="20" Content="x²" Foreground="White" Background="Gray" />
             <Button x:Name="RootButton" FontSize="20" Content="√" Foreground="White" Background="Gray" />
-            <Button x:Name="Persent5Button" FontSize="20" Content="%" Foreground="White" Background="Gray" />
+            <Button x:Name="MultipleButton" FontSize="20" Content="%" Foreground="White" Background="Gray" />
             <Button x:Name="SevenButton" FontSize="20" Content="7" Foreground="White" Background="Gray" />
             <Button x:Name="EightButton" FontSize="20" Content="8" Foreground="White" Background="Gray" />
             <Button x:Name="NineButton" FontSize="20" Content="9" Foreground="White" Background="Gray" />
@@ -32,7 +32,7 @@
             <Button x:Name="PlusMinusButton" Background="Gray" FontSize="20" />
             <Button x:Name="ZeroButton" FontSize="20" Content="0" Foreground="White" Background="Gray"/>
             <Button x:Name="DotButton" FontSize="20" Content="." Foreground="White" Background="Gray" />
-            <Button x:Name="ResultButton" FontSize="20" Content="=" Foreground="White" Background="DarkBlue" />
+            <Button x:Name="ResultButton" FontSize="20" Content="=" Foreground="White" Background="#FF8BADD2" />
         </UniformGrid>
     </Grid>
 </Window>
