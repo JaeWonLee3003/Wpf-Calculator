@@ -7,32 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="315">
     <Grid>
-        <TextBox x:Name="CalcTextBox" TextAlignment="Right" FontSize="32" Height="85" VerticalAlignment="Top" Margin="8,0,7,0"/>
-        <StackPanel Width="300" Height="350" Background="Red" VerticalAlignment="Bottom">
-            <StackPanel Background="White" Width="auto" Height="87.5" Orientation="Horizontal" >
-                <Button x:Name="SevenButton" FontSize="40" Content="7" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="EightButton" FontSize="40" Content="8" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="NineButton" FontSize="40" Content="9" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="DivisButton" FontSize="40" Content="/" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-            </StackPanel>
-            <StackPanel Background="White" Width="auto" Height="87.5" Orientation="Horizontal" >
-                <Button x:Name="FourButton" FontSize="40" Content="4" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="FiveButton" FontSize="40" Content="5" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="SixButton" FontSize="40" Content="6" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="MinusButton" FontSize="40" Content="-" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-            </StackPanel>
-            <StackPanel Background="White" Width="auto" Height="87.5" Orientation="Horizontal" >
-                <Button x:Name="OneButton" FontSize="40" Content="1" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="TwoButton" FontSize="40" Content="2" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="ThreeButton" FontSize="40" Content="3" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="PlusButton" FontSize="40" Content="+" Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-            </StackPanel>
-            <StackPanel Background="White" Width="auto" Height="87.5" Orientation="Horizontal" >
-                <Button x:Name="PlusMinusButton" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="ZeroButton" FontSize="40" Content="0" Foreground="White" Height="87.5" Width="75" Background="Gray"></Button>
-                <Button x:Name="DotButton" FontSize="40" Content="." Foreground="White" Height="87.5" Width="75" Background="Gray" ></Button>
-                <Button x:Name="ResultButton" FontSize="40" Content="=" Foreground="White" Height="87.5" Width="75" Background="DarkBlue" ></Button>
-            </StackPanel>
-        </StackPanel>
+        <TextBlock x:Name="CalcTextBox" TextAlignment="Right" FontSize="32" Height="85" VerticalAlignment="Top" Margin="8,0,7,0"/>
+        <UniformGrid x:Name="ButtonsPanel" Width="300" Height="300" VerticalAlignment="Bottom" Columns="4">
+            <Button x:Name="PersentButton" FontSize="20" Content="%" Foreground="White" Background="Gray" />
+            <Button x:Name="ClearEntryButton" FontSize="20" Content="CE" Foreground="White" Background="Gray" />
+            <Button x:Name="ClearButton" FontSize="20" Content="C" Foreground="White" Background="Gray" />
+            <Button x:Name="RemoveButton" FontSize="20" Content="&lt;" Foreground="White" Background="Gray" />
+            <Button x:Name="FractionButton" FontSize="20" Content="1/x" Foreground="White" Background="Gray" />
+            <Button x:Name="SqrButton" FontSize="20" Content="x²" Foreground="White" Background="Gray" />
+            <Button x:Name="RootButton" FontSize="20" Content="√" Foreground="White" Background="Gray" />
+            <Button x:Name="Persent5Button" FontSize="20" Content="%" Foreground="White" Background="Gray" />
+            <Button x:Name="SevenButton" FontSize="20" Content="7" Foreground="White" Background="Gray" />
+            <Button x:Name="EightButton" FontSize="20" Content="8" Foreground="White" Background="Gray" />
+            <Button x:Name="NineButton" FontSize="20" Content="9" Foreground="White" Background="Gray" />
+            <Button x:Name="DivisButton" FontSize="20" Content="/" Foreground="White" Background="Gray" />
+            <Button x:Name="FourButton" FontSize="20" Content="4" Foreground="White" Background="Gray" />
+            <Button x:Name="FiveButton" FontSize="20" Content="5" Foreground="White" Background="Gray" />
+            <Button x:Name="SixButton" FontSize="20" Content="6" Foreground="White" Background="Gray" />
+            <Button x:Name="MinusButton" FontSize="20" Content="-" Foreground="White" Background="Gray" />
+            <Button x:Name="OneButton" FontSize="20" Content="1" Foreground="White" Background="Gray" />
+            <Button x:Name="TwoButton" FontSize="20" Content="2" Foreground="White" Background="Gray" />
+            <Button x:Name="ThreeButton" FontSize="20" Content="3" Foreground="White" Background="Gray" />
+            <Button x:Name="PlusButton" FontSize="20" Content="+" Foreground="White" Background="Gray" />
+            <Button x:Name="PlusMinusButton" Background="Gray" FontSize="20" />
+            <Button x:Name="ZeroButton" FontSize="20" Content="0" Foreground="White" Background="Gray"/>
+            <Button x:Name="DotButton" FontSize="20" Content="." Foreground="White" Background="Gray" />
+            <Button x:Name="ResultButton" FontSize="20" Content="=" Foreground="White" Background="DarkBlue" />
+        </UniformGrid>
     </Grid>
 </Window>
